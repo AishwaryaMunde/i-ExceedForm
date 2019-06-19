@@ -1,0 +1,336 @@
+body{
+    background: #1f6ad0;
+    background: -moz-linear-gradient(left, #1f6ad0 0%, #13b9de 100%);
+    background: -webkit-linear-gradient(left, #1f6ad0 0%, #13b9de 100%);
+    background: linear-gradient(to right, #1f6ad0 0%, #13b9de 100%);
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+.numberTab {
+    position: relative;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+.numberTab > li.active > a, .numberTab > li.active > a:hover, .numberTab > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+#prevstep,#prevStepSectionC,#prevStepSectionF,#prevStepSectionE,#prevStepSectionD,#plusofaddnew3,#plusofaddnew4,
+#plusofaddnew5,#plusofaddnew6,#plusofaddnew2,#plusofaddnew {
+   float: left;
+}
+#minusofaddnew , #minusofaddnew3,#minusofaddnew4,#minusofaddnew2,#minusofaddnew5,#minusofaddnew6{
+  float: right;
+}
+span.round-tabs{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    border-radius: 100px;
+    background: white;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 20px;
+}
+span.round-tabs.one{
+    border: 2px white;
+}
+
+li.active span.round-tabs.one{    
+    color: white;
+}
+span.round-tabs.two{
+    border: 2px white;
+}
+
+li.active span.round-tabs.two{
+    color: white;
+}
+
+span.round-tabs.three{
+    border: 2px white;
+}
+
+li.active span.round-tabs.three{
+    color: white;
+}
+
+span.round-tabs.four{
+    border: 2px white;
+}
+
+li.active span.round-tabs.four{
+    color: white;
+}
+
+span.round-tabs.five{
+    border: 2px white;
+}
+
+li.active span.round-tabs.five{
+    color:white;
+}
+span.round-tabs.six{
+    border: 2px white;
+}
+
+li.active span.round-tabs.six{
+    color: white;
+}
+.numberTab > li.active > a span.round-tabs{
+    background: mediumvioletred;
+}
+.numberTab > li {
+    width: 16%;
+}
+li:after {
+    content: " ";
+    position: absolute;
+    left: 28%;
+    opacity:0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #ddd;
+    transition:0.1s ease-in-out;
+    
+}
+li.active:after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+    opacity:1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #ddd;    
+}
+.numberTab > li a{
+   width: 50px;
+   height: 50px;
+   margin: 20px auto;
+   border-radius: 100%;
+   padding: 0;
+}
+.numberTab > li a:hover{
+    background: transparent;
+}
+.button, .button4 {
+  border-radius: 10px;
+  background:white;
+  border: none;
+  padding: 8px 6px;
+  float: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 23px;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: #333;
+}
+.submitEnable{
+   font-weight: bold;
+}
+@media( max-width : 585px ){
+span.round-tabs {
+	font-size:16px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+}
+}
+@import "compass/css3";
+.avatar-wrapper{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: 50px auto;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 1px 1px 15px -5px black;
+	transition: all .3s ease;
+	&:hover{
+		transform: scale(1.05);
+		cursor: pointer;
+	}
+	&:hover .profile-pic{
+		opacity: .5;
+	}
+	.profile-pic {
+    height: 100%;
+		width: 100%;
+		transition: all .3s ease;prevstep
+		&:after{
+			font-family: FontAwesome;
+			content: "\f007";
+			top: 0; left: 0;
+			width: 50%;
+			height: 50%;
+			position: absolute;
+			font-size: 190px;
+			background: #ecf0f1;
+			color: #34495e;
+			text-align: center;
+		}
+	}
+	.upload-button {
+		position: absolute;
+		top: 0; left: 0;
+		height: 50%;
+		width: 50%;
+		.fa-arrow-circle-up{
+			position: absolute;
+			font-size: 234px;
+			top: -17px;
+			left: 0;
+			text-align: center;
+			opacity: 0;
+			transition: all .3s ease;
+			color: #34495e;
+		}
+		&:hover .fa-arrow-circle-up{
+			opacity: .9;
+		}
+	}
+}
+
+.frame-square {
+  background: #fff;
+  border: 2px solid #000;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  width: 130px;
+  height: 130px;
+  margin-right: .5em;
+  margin-bottom: .3em;
+}
+
+h2 {
+   margin-top:19px;
+   margin-bottom:0px;
+}
+.glyphicon{
+   background-color: white;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+    height: 90%;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: auto;
+    margin-right: 18px;
+}
+#toggleHome,#toggleContact {
+margin-right: 0;
+}
+#secA {
+margin-left:7px;
+}
+.navbar{
+margin-bottom:0px;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+    height: 90%;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: auto;
+    margin-right: 18px;
+}
+#toggleHome,#toggleContact {
+margin-right: 0;
+}
+.bg {
+  /* The image used */
+  background-image: url("/img/First.jpg");
+
+  /* Full height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h3 {
+   margin-top:0px;
+}
+
+.borderRed {
+    border: 2px solid #841b1b;
+}
+.borderGreen {
+    border: 2px solid green;
+}
+#degree,#gap,#gapForExp {
+margin-top:17px;
+}
+.sno {
+	display: none !important;
+}
+.eduClsActive , .eduClsActivePage3,.eduClsActivePage3Tab2, .eduClsActivePage4Tab2, .eduClsActivePage3Tab3 {
+	background-color: lightgrey !important;
+}
+.navbar-brand {
+  padding: 0px;
+}
+
+.glyphicon-plus:before , .glyphicon-minus{
+    background-color: lightgrey;
+    font-size: 17px;
+    line-height: 1.428571429;
+    border-radius: 11px;
+    width: 19px;
+}
+.glyphicon-camera {
+    background-color: #337ab7;
+}
+.glyphicon-calendar:before {
+    background: #3f88b8;
+}
+.btn {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #3f88b8;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+}
+
+
+input[type="file"] {
+  display: none !important;
+}
+.glyphicon-upload{
+background-color: #337ab7;
+}
+#submit{
+  background-color: #337ab7;
+  font-size:17px;
+  color: white;
+}
+.eduClsActive a,.eduClsActivePage3 a ,.eduClsActivePage3Tab2 a,.eduClsActivePage3Tab3 a ,.eduClsActivePage4Tab2 a , .eduClsActivePage6 a
+{
+background-color: #29b141 !important;
+color: black;
+}
+.nav-Tabs >li>a {
+    background-color: #e2d9d9;
+	color: black;
+    }
+
+#tabs,#tabs_3,#tabs_4,#tabs_2,#tabs_5,#tabs_6{
+   margin-bottom: 12px;
+}
+
+

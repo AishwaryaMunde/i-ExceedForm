@@ -1,0 +1,504 @@
+<!D0OCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <script type="text/javascript" src=js/index.js></script>
+<script>
+$( document ).ready(function() {
+    addnew();
+$("#educationGap").addClass("sno");
+$("#eduReason").addClass("sno");
+$("#workExperience").addClass("sno");
+$("#releventWork").addClass("sno");
+});
+$(document).ready(function(){
+jQuery(function($) {
+  $('input[type="file"]').change(function() {
+    if ($(this).val()) {
+	    error = false;    
+      var filename = $(this).val();
+      $(this).closest('.file-upload').find('.file-name').html(filename);
+
+      if (error) {
+        parent.addClass('error').prepend.after('<div class="alert alert-error">' + error + '</div>');
+      }
+    }
+  });
+});
+});
+
+</script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"><img src="img/i-exceed.png" id="logo"alt="I-Exceed">
+        </a>
+      </div>
+      <div id="navbar1" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li id="toggleHome"><a href="index.html">Home</a></li>
+	  <li id="toggleApply"><a href="Apply.html">Application Form</a></li>         	
+          <li id="toggleContact"><a href="Contact.html">Contact</a></li>         
+	  <li id="toggleAbout"><a href="About.html">About</a></li>         
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+
+<div class="container" id="first">
+	<div class="text-center">		
+		<h2>Application Form</h2>
+	</div>
+	<ul class="nav nav-tabs numberTab" id="myTab">                   
+                  <li class="active">
+                     <a href="#sectionA" data-toggle="tab">
+                      <span class="round-tabs one" id="tabdata1">1                       
+                      </span> 
+                  </a></li>
+
+                  <li><a href="#sectionB" data-toggle="tab">
+                     <span class="round-tabs two">2
+                     </span> 
+                    </a>
+                 </li>
+                 <li><a href="#sectionC" data-toggle="tab">
+                     <span class="round-tabs three">3
+                     </span> </a>
+                     </li>
+
+                     <li><a href="#sectionD" data-toggle="tab">
+                         <span class="round-tabs four">4
+                         </span> 
+                     </a></li>
+
+                     <li><a href="#sectionE" data-toggle="tab">
+                         <span class="round-tabs five">5
+                         </span> </a>
+                     </li>   
+		     <li><a href="#sectionF" data-toggle="tab">
+                         <span class="round-tabs six">6
+                         </span> </a>
+                     </li>                   
+        </ul>	
+	<div class="panel panel-default">
+    		<div class="panel-body">
+		<div class="tab-content" id="loginverify">				
+				<div id="sectionA" class="tab-pane fade in active">				  					
+					 <div class="row">
+						<div class="form-group col-sm-6">
+							<label for="name">Name</label>
+							<input type="text" id="name"class="form-control mand borderRed" onkeyup="mandatory(this)" onchange="checkform(this)" placeholder="Enter your name">
+						</div>				
+						<div class="form-group col-sm-6">
+							<label>Gender :</label>
+						         <select class="form-control mand borderRed" onchange="checkform(this);mandatory(this);" id="gender">
+								<option>Select</option> 
+								<option>Male</option>
+								<option>Female</option>
+								<option>Other</option>
+			       				 </select>
+</div>
+					</div>
+					<div class="row">
+						<!--<div class="form-group col-sm-6">
+							<label for="dob" id="dateOfBirth">Date Of Birth</label>
+							<div class='input-group date'>					   
+							    <input type='text' class="form-control mand borderRed" id='datepicker1'  onchange="checkform(this);mandatory(this);" />
+							    <span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar" id="calenderIcon"></span>
+							    </span>
+							</div>
+                            
+						</div>-->
+						<div class="form-group col-sm-6">
+							  <div class="form-group">
+							    <label>Date Of Birth</label>
+							    <div class="input-group">
+							      <input type="text" class="form-control  mand borderRed" name="sample-date" id="dob" onchange="checkform(this);mandatory(this);">
+							      <span class="input-group-btn">
+							     <button type="button" class="btn btn-default" data-toggle="datepicker" onclick="datepick()" data-target-name="sample-date"><span class="glyphicon glyphicon-calendar"></span>
+							      </button>
+							      </span>
+							    </div>
+							  </div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="fathername" id="fathername">Father's/Husband's Name</label>
+							<input class="form-control" type="text" placeholder="Enter father/husband name">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="permanentAddress">Permanent Address</label>
+							<textarea class="form-control mand borderRed" rows="3" cols="50" id="permenantAddr"  onchange="checkform(this)"  onkeyup="mandatory(this)"></textarea>
+						</div>	
+						<div class="form-group col-sm-6">
+							<label>Is your present and permanent addresses are same?</label>	
+							<!--<input type="radio" onclick="fillAddress(this)" value="Yes">Yes
+							<input type="radio" onclick="fillAddress(this)" value="No">No-->
+							<div class="radio" onclick="fillAddress(this)">
+							  <label><input type="radio" name="optradio" >YES</label>
+							</div>
+							<div class="radio" onclick="fillAddress(this)">
+							  <label><input type="radio" name="optradio">NO</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="presentAddress">Present Address</label>
+							<textarea class="form-control mand borderRed" rows="3" cols="50"  id="presentAddr" onkeyup="mandatory(this)" onchange="checkform(this)" ></textarea>
+						</div>	
+						<div class="form-group col-sm-6">
+							<label for="emailId">Email Id</label>
+							<input class="form-control mand borderRed" type="email"  placeholder="abc@example.com" id="emailId"   onchange="checkform(this)" onkeyup="mandatory(this)" >	
+						</div>
+					</div>	
+					<div class="row">
+						<div class="form-group col-sm-6">
+						    <label for="residencePhoneNo">Residence Phone No.</label>
+						    <input type="number" class="form-control" id="residencePhoneNo">
+						</div>
+						<div class="form-group  col-sm-6">
+						    <label id="mobNo" for="mobno">Mobile No. : </label>
+						    <input type="number" class="form-control mand borderRed" id="mobileno" onkeyup="mandatory(this)" onchange="checkform(this);validatePhn();" >
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="form-group col-sm-6">
+						    <label for="passportNo" id="passport">Passport No.</label>
+						    <input type="text" class="form-control" id="passportNo">
+						</div>
+						<div class="form-group col-sm-6">
+						    <label for="panNo">Pan No.</label>
+						    <input type="text" class="form-control mand borderRed" id="panNo"  onkeyup="mandatory(this)" onchange="checkform(this);validatePan();" >
+						</div>
+					</div>
+					<div class="row">
+						<!--<div class="form-group col-sm-6">
+						    <label for="validity" id="validityOfPassport">Validity of passport no : </label>
+						    <div class='input-group date'>					   
+							    <input type='text' class="form-control" id='validity' />
+							    <span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar" id="calenderIcon"></span>
+						            </span>
+						    </div>
+						</div>-->
+<div class="form-group col-sm-6">
+						<div class="form-group">
+							    <label>Validity Of Passport No : </label>
+							<div class="input-group">
+							      <input type="text" class="form-control" id="validity" name="validity">
+							      <span class="input-group-btn">
+							     <button type="button" class="btn btn-default" onclick ="datepick()" data-toggle="datepicker1" data-target-name="validity">
+									<span class="glyphicon glyphicon-calendar"></span>
+							      </button>							      
+			    				</div>
+						</div>
+					</div>
+					<div class="form-group col-sm-6">
+						    <label for="adharNo" id="adhar">Aadhar No.</label>
+						    <input type="number" class="form-control mand borderRed" id="adharNo" onkeyup="mandatory(this)" placeholder="0000 1111 2222"  onchange="checkform(this); validateAdhar();"  >
+					</div>
+						
+					</div>						
+					<div class="text-center">
+						<button class="button button4" id="next_1" onclick="navigateToB(this)"><span id="secANext"class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li></button>
+
+					</div>					
+				</div>
+				<div id="sectionB" class="tab-pane fade">
+					<div class="text-center">
+						<h3>Academic Qualifications</h3>
+					</div>
+					<div class="row">
+						<div class="col-sm-12" id="details" style="background-color:white;">
+							<div>
+								<label id="plusofaddnew" onclick="addnew()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
+								<label id="minusofaddnew"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab(this)" aria-hidden="true"></span></label></br>
+							</div>
+							<div class="tabs" id="__BVID__176">
+								<div class="card-header">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs mynews academic" id="tabs"></br>
+									</ul>
+								</div>
+								<div class="tab-content" id="__BVID__176__BV_tab_container_">
+								</div>
+							</div>
+						</div>					  
+					</div>					    	
+				</div>
+				<div id="sectionC" class="tab-pane fade">
+					<label id="technology">Technologies : </label>
+					<div class="row">
+						<div class="form-group col-sm-6">
+						    <label for='primarySkills' id="pSkill">Primary Skills</label>
+						    <textarea class="form-control" rows="3" cols="50"></textarea>
+						</div>
+						<div class="form-group col-sm-6">
+						    <label for='secondarySkills'>Secondary Skills</label>
+						    <textarea class="form-control" rows="3" cols="50"></textarea>
+						</div>	
+					</div>					
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label>Is there any education gap?</label>	
+							<div class="radio" onclick="educationGap(this)">
+								<label><input type="radio" name="educationGap" >YES</label>
+							</div>
+							<div class="radio" onclick="educationGap(this)">
+							  	<label><input type="radio" name="educationGap">NO</label>
+							</div>
+						</div>
+					</div>
+						<label id="eduReason">If you have any education gap please mention the reason below </label>
+
+						<div class="row" id="educationGap">				
+							<div class="col-sm-12" id="details_1" style="background-color:white;">
+								<div>
+									<label id="plusofaddnew3" onclick="addnew_3()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
+								<label id="minusofaddnew3"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab3(this)" aria-hidden="true"></span></label></br>
+								</div>
+								<div class="tabs" id="__BVID__176">
+									<div class="card-header">
+										<ul role="tablist" class="nav nav-tabs card-header-tabs eduGap" id="tabs_3">
+										</ul>
+									</div>
+									<div class="tab-content" id="tab3Content_2">
+									</div>
+								</div>
+							</div>
+						</div>
+						<label>Additional training & Certifications</label>
+					<div class="row">
+						<div class="col-sm-12" id="details_1" style="background-color:white;">
+							<div>
+								<label id="plusofaddnew4" onclick="addnew_4()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
+							<label id="minusofaddnew4"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab4(this)" aria-hidden="true"></span></label></br>
+							</div>
+							<div class="tabs" id="__BVID__176">
+								<div class="card-header">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_4">
+									</ul>
+								</div>
+								<div class="tab-content" id="tab3Content_3">
+								</div>
+							</div>
+						</div>					  
+					</div>						
+									
+				<div class="text-center">
+						<button class="button button4" id="nextStepSectionC" onclick="navigateToB(this)"><span id="secCNext"class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+						<button class="button button4" id="prevStepSectionC" onclick="navigateToB(this)"><span id="secCPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>					
+				  	</div>
+				</div>				
+				<div id="sectionD" class="tab-pane fade">
+					<div class="form-group ">  
+						<label>Total Year Of Experience</label>
+				    		<input type="number" class="form-control" placeholder="No of years">		    
+					</div>
+				       <div class=" form-group" >		    
+						<label>Total Relevant Experience</label>
+						<input type="number" class="form-control" placeholder="No of years">
+					    
+				       </div>
+				     <div class="form-group ">		    
+						<label>Non -IT Experience</label>
+						<input type="number" class="form-control" placeholder="No of non IT years">		    
+					</div>
+				      <div class="form-group ">		    
+						<label>Minimum Joining Time Require</b></label>
+						<input type="text" class="form-control" placeholder="Enter joining time">
+		    
+				       </div>
+
+					<label>Is there any relevant wWork experience?</label>
+					<div class="radio" onclick="workExperience(this)">
+					  	<label><input type="radio" name="relevantExp" >YES</label>
+					</div>
+					<div class="radio" onclick="workExperience(this)">
+					  	<label><input type="radio" name="relevantExp">NO</label>
+					</div>
+					<label id="releventWork">Relevant work experience(please mention latest employment first)</label>
+					<div class="row" id="workExperience">
+						<div class="col-sm-12" id="details_1" style="background-color:white;">
+							<div>
+								<label id="plusofaddnew2" onclick="addnew_2()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
+								<label id="minusofaddnew2"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab2(this)" aria-hidden="true"></span></label></br>
+							</div>
+							<div class="tabs" id="__BVID__176">
+								<div class="card-header">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_2">
+									</ul>
+								</div>
+								<div class="tab-content" id="tab3Content">
+								</div>
+							</div>
+						</div>					  
+					</div>
+					<LABEL>If you have any Gap in experience if Yes, please mention the reason below</LABEL>
+					<div class="row">
+						<div class="col-sm-12" id="details_1" style="background-color:white;">
+							<div>
+								<label id="plusofaddnew5" onclick="addnew_5()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
+								<label id="minusofaddnew5"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab5(this)" aria-hidden="true"></span></label></br>
+							</div>
+							<div class="tabs" id="__BVID__176">
+								<div class="card-header">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_5">
+									</ul>
+								</div>
+								<div class="tab-content" id="tab3Content_5">
+								</div>
+							</div>
+						</div>					  
+					</div>		
+																		
+					<div class="text-center">
+						<button class="button button4" id="nextStepSectionD" onclick="navigateToB(this)"><span id="secDNext"class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+						<button class="button button4" id="prevStepSectionD" onclick="navigateToB(this)"><span id="secDPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></button>					
+					</div>
+				</div>
+				<div id="sectionE" class="tab-pane fade">
+					<div class="form-group">		    
+						<label> Awards,Accolades,Extra Curricular Achievemenets</label>
+				    		<textarea class="form-control" rows = "4" cols = "100"></textarea> 		    		    
+				        </div>
+				        <div class="form-group">		    
+						<p>Please state about your professional strengths & areas of improvements</p>
+					    	<label for="strengths">Strengths</label>
+					    	<textarea class="form-control" rows = "2" cols = "70"></textarea> 		    		    		    
+				        </div>
+				    <div class="form-group">		    
+						<label for='areaOfImprovement'>Area Of Improvement</label>
+				    		<textarea class="form-control" rows = "4" cols = "50"></textarea>		    
+				     </div>
+				    <div class="form-group">		    
+						<label for='shorttermgoal'>Short Term Goals</label>
+				    		<textarea class="form-control" rows = "3" cols = "50"></textarea> 		    
+				     </div>
+				    <div class="form-group">		    
+						<label for='longTermGoal'>Long Term Goals</label>
+				    		<textarea class="form-control" rows = "3" cols = "50"></textarea>   
+				     </div>
+				    <div class="form-group">		    
+						<lable>Are you willing to travel abroad?</lable>    
+				    		<div class="radio">
+							<label><input type="radio" name="travel" >YES</label>
+						</div>
+						<div class="radio">
+						  	<label><input type="radio" name="travel">NO</label>
+						</div>		    
+				     </div>
+				    <div class="form-group">		    
+						<p>if no why?</p>
+				    		<input class="form-control" type="text" placeholder="Explain reason"> 		    
+				     </div>
+				   <div class="form-group">
+				    <p>Compensation details:(please mention your total cost to company(CTC)</p>
+				  </div>
+				  <div class="form-group">		    
+						<label for='description'>Any other information useful for your selection</label>
+			   			<textarea class="form-control" rows = "3" cols = "50"></textarea> 		    
+				  </div>
+					<div class="text-center">
+						<button class="button button4" id="nextStepSectionE" onclick="navigateToB(this)"><span id="secENext"class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+						<button class="button button4" id="prevStepSectionE" onclick="navigateToB(this)"><span id="secEPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+					</div>
+				</div>
+				<div id="sectionF" class="tab-pane fade">
+					<label>Two Professional References(One must be from the Present Employer)</label>
+					<div class="row">
+						<div class="col-sm-12" id="details_1" style="background-color:white;">
+							<div>
+								<label id="plusofaddnew6" onclick="addnew_6()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
+								<label id="minusofaddnew6" onclick="deleteTab6(this)"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></label></br>
+							</div>
+							<div class="tabs" id="__BVID__176">
+								<div class="card-header">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_6">
+									</ul>
+								</div>
+								<div class="tab-content" id="tab6Content">
+								</div>
+							</div>
+						</div>					  
+					</div>	
+					<center>
+						<div class="app">
+							<h3>Upload Profile Picture</h3>
+							<div class="frame-square">
+								<img class="profile-pic" id="img" width="100%" height="100%" src="img/Profile.jpeg"/>			
+							</div>
+						</div>
+					</center>				
+					   <div align="center">
+						   <button class="btn btn-primary" id="camerabtnId" onclick="testCamera()"><span class="glyphicon glyphicon-camera" aria-hidden="true"></button>						
+						   <input class="file-upload" type="file" accept="image/*"/>							
+	    					   <label for="upload-1" class="btn "><span class="glyphicon glyphicon-upload" aria-hidden="true" id="thing"></span></label>
+						  <input type="file" class="file-upload" id="upload-1">
+						  <p class="file-name"></p>
+					   </div>					   
+					<script type="text/javascript">
+						 app.initialize();
+					</script>
+								
+					<div class="form-group">
+							<label for="declaration">Declaration</label>							
+							<p><input type="checkbox">I hereby declare that the particulars given above are true and to the best of my knowledge.</p>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">	    
+						<label for="place">Place</label>
+						<input type="text" class="form-control" placeholder="">
+						</div>		    
+					</div>	
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<div class="form-group">
+							    <label>Date</label>
+							    <div class="input-group">
+							      <input type="text" class="form-control" name="dateOfSubmission" id="lastdate">
+							      <span class="input-group-btn">
+							     <button type="button" class="btn btn-default" data-toggle="datepicker2" onclick="datepick()" data-target-name="dateOfSubmission"><span class="glyphicon glyphicon-calendar"></span>
+							      </button>
+							      </span>
+							    </div>
+							  </div>
+						</div>
+					</div>					   
+					<script type="text/javascript">
+						 app.initialize();
+					</script>
+					<div class="text-center">						
+						<button class="button button4" id="submit">Submit</button>
+						<button class="button button4" id="prevStepSectionF" onclick="navigateToB(this)"><span id="secFPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
