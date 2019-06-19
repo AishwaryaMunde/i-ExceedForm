@@ -332,5 +332,11 @@ color: black;
 #tabs,#tabs_3,#tabs_4,#tabs_2,#tabs_5,#tabs_6{
    margin-bottom: 12px;
 }
-
+.mynews > li .close {
+			    margin: -2px 0 0 10px;
+			    font-size: 18px;
+			}
+			.marginBottom {
+			    margin-bottom :1px !important;
+			}
 
