@@ -18,6 +18,9 @@ $("#educationGap").addClass("sno");
 $("#eduReason").addClass("sno");
 $("#workExperience").addClass("sno");
 $("#releventWork").addClass("sno");
+addnew_4();
+addnew_5();
+addnew_6();
 });
 $(document).ready(function(){
 jQuery(function($) {
@@ -68,7 +71,7 @@ jQuery(function($) {
 		<h2>Application Form</h2>
 	</div>
 	<ul class="nav nav-tabs numberTab" id="myTab">                   
-                  <li class="active">
+                  <li class="active" id="secA">
                      <a href="#sectionA" data-toggle="tab">
                       <span class="round-tabs one" id="tabdata1">1                       
                       </span> 
@@ -231,12 +234,12 @@ jQuery(function($) {
 					<div class="row">
 						<div class="col-sm-12" id="details" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew" onclick="addnew()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew" onclick="addnew()">Add New</button></br>
+								<!--<label id="minusofaddnew"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab(this)" aria-hidden="true"></span></label></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs mynews marginBottom" id="tabs"></br>
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs"></br>
 									</ul>
 								</div>
 								<div class="tab-content" id="__BVID__176__BV_tab_container_">
@@ -273,12 +276,12 @@ jQuery(function($) {
 						<div class="row" id="educationGap">				
 							<div class="col-sm-12" id="details_1" style="background-color:white;">
 								<div>
-									<label id="plusofaddnew3" onclick="addnew_3()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew3"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab3(this)" aria-hidden="true"></span></label></br>
+									<button class="btn btn-info" type="button" id="plusofaddnew3" onclick="addnew_3()">Add New </button></br></br>
+								<!--<label id="minusofaddnew3"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab3(this)" aria-hidden="true"></span></label></br></br>-->
 								</div>
 								<div class="tabs" id="__BVID__176">
 									<div class="card-header">
-										<ul role="tablist" class="nav nav-tabs card-header-tabs eduGap mynews marginBottom" id="tabs_3">
+										<ul role="tablist" class="nav nav-tabs card-header-tabs eduGap recordtab" id="tabs_3">
 										</ul>
 									</div>
 									<div class="tab-content" id="tab3Content_2">
@@ -286,16 +289,16 @@ jQuery(function($) {
 								</div>
 							</div>
 						</div>
-						<label>Additional training & Certifications</label>
+						<label id="certification">Additional training & Certifications</label>
 					<div class="row">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew4" onclick="addnew_4()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-							<label id="minusofaddnew4"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab4(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew4" onclick="addnew_4()">Add New</button></br></br>
+							<!--<label id="minusofaddnew4"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab4(this)" aria-hidden="true"></span></label></br></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs mynews marginBottom" id="tabs_4">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_4">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab3Content_3">
@@ -340,12 +343,12 @@ jQuery(function($) {
 					<div class="row" id="workExperience">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew2" onclick="addnew_2()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew2"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab2(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew2" onclick="addnew_2()">Add New</button></br></br>
+								<!--<label id="minusofaddnew2"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab2(this)" aria-hidden="true"></span></label>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs mynews marginBottom" id="tabs_2">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_2">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab3Content">
@@ -353,16 +356,16 @@ jQuery(function($) {
 							</div>
 						</div>					  
 					</div>
-					<LABEL>If you have any Gap in experience if Yes, please mention the reason below</LABEL>
+					<LABEL id="gapInExp">If you have any Gap in experience if Yes, please mention the reason below</LABEL>
 					<div class="row">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew5" onclick="addnew_5()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew5"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab5(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew5" onclick="addnew_5()">Add New</button></br></br>
+								<!--<label id="minusofaddnew5"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab5(this)" aria-hidden="true"></span></label></br></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs mynews marginBottom" id="tabs_5">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_5">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab3Content_5">
@@ -424,16 +427,16 @@ jQuery(function($) {
 					</div>
 				</div>
 				<div id="sectionF" class="tab-pane fade">
-					<label>Two Professional References(One must be from the Present Employer)</label>
+					<label id="reference">Two Professional References(One must be from the Present Employer)</label>
 					<div class="row">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew6" onclick="addnew_6()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew6" onclick="deleteTab6(this)"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew6" onclick="addnew_6()">Add New</button></br></br>
+								<!--<label id="minusofaddnew6" onclick="deleteTab6(this)"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></label></br></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs mynews marginBottom" id="tabs_6">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_6">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab6Content">
