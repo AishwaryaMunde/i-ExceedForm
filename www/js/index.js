@@ -30,6 +30,7 @@ $(document).ready(function() {
             }
             reader.readAsDataURL(input.files[0]);
         }
+        $("#thing").addClass("profilepic");
     }
     $(".file-upload").on('change', function(){
         readURL(this);
@@ -42,6 +43,7 @@ function success(imageData) {
 	var image = document.getElementById('img');
 	image.src = "data:image/jpeg;base64," + imageData;
 	$("#camerabtnId").removeAttr("disabled");
+	$("#camerabtnId").addClass("profilepic");
 }
 
 function Newerror(err) {
@@ -127,19 +129,19 @@ function navigateToB(pthis){
 		$('#myTab a[href="#sectionC"]').tab('show');
 	}else if(pthis.id=="prevstep"){
 		$('#myTab a[href="#sectionA"]').tab('show');
-	}else if(pthis.id=="nextStepSectionC"){	
+	}else if(pthis.id=="nextStepSectionC"){
 		$('#myTab a[href="#sectionD"]').tab('show');
-	}else if(pthis.id=="prevStepSectionC"){	
+	}else if(pthis.id=="prevStepSectionC"){
 		$('#myTab a[href="#sectionB"]').tab('show');
-	}else if(pthis.id=="nextStepSectionE"){	
+	}else if(pthis.id=="nextStepSectionE"){
 		$('#myTab a[href="#sectionF"]').tab('show');
-	}else if(pthis.id=="prevStepSectionE"){	
+	}else if(pthis.id=="prevStepSectionE"){
 		$('#myTab a[href="#sectionD"]').tab('show');
-	}else if(pthis.id=="prevStepSectionF"){	
+	}else if(pthis.id=="prevStepSectionF"){
 		$('#myTab a[href="#sectionE"]').tab('show');
-	}else if(pthis.id=="nextStepSectionD"){	
+	}else if(pthis.id=="nextStepSectionD"){
 		$('#myTab a[href="#sectionE"]').tab('show');
-	}else if(pthis.id=="prevStepSectionD"){	
+	}else if(pthis.id=="prevStepSectionD"){
 		$('#myTab a[href="#sectionC"]').tab('show');
 	}
 }
@@ -164,7 +166,10 @@ var nextTab = $('#tabs').find('li').length;
 if(nextTab<5){
 $('<li id="liTab_'+(nextTab+1)+'" onclick="selectCurrTab(this,event)" role="presentation" class="nav-item eduCls"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav-link " id="tab_'+nextTab+'"><button class="close closeTab" id="button_'+(nextTab+1)+'" type="button" onclick="deleteTab(this)">x</button><label>Record '+(nextTab+1)+'</label></a></li>').appendTo('#tabs');
 
-$('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivCls tab-pane active card-body" id="tab'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="degree" id="degree">Degree/Course</label><select class="form-control" id="degree_'+(nextTab+1)+'" onchange="updateTab(this)"><option value="" disabled="" selected="">Select the degree</option><option value="sslc">SSLC/10TH</option><option value="hsc">HSC/12TH</option><option value="bsc">BSC</option><option value="b.e">B.E</option><option value="m.e">M.E</option></select></div><div class="form-group "><label for="period">Period</label><input type="text" class="form-control" placeholder="Enter period" required></div><div class=" form-group" ><label for="institution">Institution</label><input type="text" class="form-control" placeholder="Enter institution"> </div><div class="form-group "><label for="class">Class</label><input id="class" type="text" class="form-control" placeholder="Enter the class" ></div><div class="form-group "><label for="percentage">Percentage</label><input type="number" class="form-control" placeholder="Enter the percentage"></div><div class="text-center"><button type="submit" class="button button4" id="nextStep"  onclick="navigateToB(this)"><span id="secBNext" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button><button type="submit" class="button button4" id="prevstep" onclick="navigateToB(this)"><span id="secBPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button></div></div>').appendTo('.tab-content');
+$('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivCls tab-pane active card-body" id="tab'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="degree" id="degree">Degree/Course</label><select class="form-control borderRed mand1"  id="degree_'+(nextTab+1)+'" onchange="updateTab(this); checkform_1(this); mandatory_1(this);"><option  value=""    selected="">Select the degree</option><option value="sslc">SSLC/10TH</option><option value="hsc">HSC/12TH</option><option value="bsc">BSC</option><option value="b.e">B.E</option><option value="m.e">M.E</option></select></div><div class="form-group "><label for="period">Period</label><input type="text" class="form-control borderRed mand1"  id="period"  placeholder="Enter period" onchange="checkform_1(this)"   onkeyup="mandatory_1(this)";  "></div><div class=" form-group" ><label for="institution">Institution</label><input type="text" class="form-control borderRed mand1" placeholder="Enter institution"  id="instution" onchange="checkform_1(this)"   onkeyup="mandatory_1(this)"; > </div><div class="form-group "><label for="class">Class</label><input id="class" type="text" class="form-control borderRed mand1"  placeholder="Enter the class"  onchange="checkform_1(this)"   onkeyup="mandatory_1(this)";></div><div class="form-group "><label for="percentage">Percentage</label><input type="number" class="form-control borderRed mand1" placeholder="Enter the percentage"   id="percent" onchange="checkform_1(this)"  onkeyup="mandatory_1(this)";></div><div class="text-center"><button type="submit" class="button button4" id="nextStep"  onclick="navigateToB(this)"><span id="secBNext" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button><button type="submit" class="button button4" id="prevstep" onclick="navigateToB(this)"><span id="secBPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button></div></div>').appendTo('.tab-content');
+}
+if(nextTab==0){
+ $("#degree_1").val("sslc").trigger('change'); 
 }
 $('#liTab_'+(nextTab+1)).trigger('click');
 }
@@ -219,7 +224,7 @@ if(nextTab<5){
 $("#tabs_2").find('li').removeClass('eduClsActivePage3');
       $('<li id="liPage3_'+(nextTab+1)+'" onclick="selectCurrTab_2(this,event)" role="presentation" class="nav-item eduClsPage3 eduClsActivePage3"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage3_'+nextTab+'"><button class="close closeTab" id="button2'+(nextTab+1)+'" type="button" onclick="deleteTab2(this)">×</button><label>Exp. '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_2');
       
-      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage3 tab-pane active card-body" id="tabPage3'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="organization" id="org">Organization</label><input type="text" class="form-control" placeholder="Enter organization" name="organization" required=""></div><div class="form-group "><label for="role">Role/Designation</label><input type="text" class="form-control" placeholder="Enter Role/Designation" name="Role" required=""></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control" id="from"></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number" class="form-control"></div></div><div class="form-group "><label for="Reason">Reason for leaving</label><input type="text" class="form-control" placeholder="Enter the Reason for leaving" name="Reason" required=""></div></div>').appendTo('#tab3Content');
+      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage3 tab-pane active card-body" id="tabPage3'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="organization" id="org">Organization</label><input type="text" class="form-control borderRed mand1"  id="orga"  placeholder="Enter organization" id="organization" name="organization" onchange="checkform_1(this)"  onkeyup="mandatory_1(this)"  ></div><div class="form-group "><label for="role">Role/Designation</label><input type="text" class="form-control borderRed mand1" placeholder="Enter Role/Designation"  id="role"    name="Role"  onchange="checkform_1(this)"  onkeyup="mandatory_1(this)"  ></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control borderRed mand1" id="fm"   onchange="checkform_1(this)" onkeyup="mandatory_1(this)" ></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number"   id="to" class="form-control borderRed mand1"    onchange="checkform_1(this"   onkeyup="mandatory_1(this)"></div></div><div class="form-group "><label for="Reason">Reason for leaving</label><input type="text" class="form-control" placeholder="Enter the Reason for leaving" name="Reason" required=""></div></div>').appendTo('#tab3Content');
 }
       $('#liPage3_'+(nextTab+1)).trigger('click');
 
@@ -259,18 +264,53 @@ function scrolltoDiv(pid)
     	}, 'slow');
 }
 function datepick(){
-$('[data-toggle=datepicker],[data-toggle=datepicker1],[data-toggle=datepicker2]').each(function() {
-  var target = $(this).data('target-name');
-  var t = $('input[name=' + target + ']');
-  t.datepicker({
-    dateFormat: 'dd-mm-yy',
-  });
-  $(this).on("click", function() {
-    t.datepicker("show");
-  });
+
+$('[data-toggle=datepicker]').each(function() {
+ var target = $(this).data('target-name');
+ var t = $('input[name=' + target + ']');
+ t.datepicker({
+ dateFormat: 'dd-mm-yy',
+ });
+ if($("#ui-datepicker-div:hidden").length!=0){
+ t.datepicker("show");
+}
+ /*$(this).on("click", function() {
+
+ });*/
 });
 }
+function datepick_1(){
 
+$('[data-toggle=datepicker1]').each(function() {
+ var target = $(this).data('target-name');
+ var t = $('input[name=' + target + ']');
+ t.datepicker({
+ dateFormat: 'dd-mm-yy',
+ });
+ /* if($("#ui-datepicker-div:hidden").length!=0){
+ }*/
+ if($("#ui-datepicker-div:hidden").length!=0){
+ t.datepicker("show");
+
+ }
+});
+}
+function datepick_2(){
+
+$('[data-toggle=datepicker2]').each(function() {
+ var target = $(this).data('target-name');
+ var t = $('input[name=' + target + ']');
+ t.datepicker({
+ dateFormat: 'dd-mm-yy',
+ });
+ if($("#ui-datepicker-div:hidden").length!=0){
+ t.datepicker("show");
+}
+ /*$(this).on("click", function() {
+
+ });*/
+});
+}
 
 function addnew_3()
       {
@@ -280,7 +320,7 @@ if(nextTab<4){
 $("#tabs_3").find('li').removeClass('eduClsActivePage3Tab2');
       $('<li id="liTab2Page3_'+(nextTab+1)+'" onclick="selectCurrTab_3(this,event)" role="presentation" class="nav-item eduClsPage3Tab2 eduClsActivePage3Tab2"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage3Tab2__'+nextTab+'"><button class="close closeTab" id="button3_'+(nextTab+1)+'" type="button" onclick="deleteTab3(this)">×</button><label>Gap Record '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_3');
       
-      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage3_2 tab-pane active card-body" id="tabPage3Tab2'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="gap" id="gap">Gap in Education</label><select class="form-control" id="gap_'+(nextTab+1)+'"onchange="updateTab_3(this)"><option value="" disabled="" selected="">Select the Gap in Education</option><option value="sslc">SSLC/10TH</option><option value="hsc">HSC/12TH</option><option value="ug">UG</option><option value="pg">PG</option></select></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control" id="from"></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number" class="form-control"></div></div><div class="form-group"><label for="reason">Reason</label><input type="text" class="form-control" id="reason"></div>').appendTo('#tab3Content_2');}
+      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage3_2 tab-pane active card-body" id="tabPage3Tab2'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="gap" id="gap">Gap in Education</label><select class="form-control borderRed mand1" id="gap_'+(nextTab+1)+'"onchange="updateTab_3(this);checkform_1(this);mandatory_1(this)"; ><option value="" disabled="" selected="">Select the Gap in Education</option><option value="hsc">HSC/12TH</option><option value="ug">UG</option><option value="pg">PG</option></select></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control borderRed mand1" id="from"  onchange="checkform_1(this)"   onkeyup="mandatory_1(this)"; ></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number"   id="xy"  class="form-control borderRed mand1"   onchange="checkform_1(this);"   onkeyup="mandatory_1(this);" ></div></div><div class="form-group"><label for="reason">Reason</label><input type="text" class="form-control" id="reason"></div>').appendTo('#tab3Content_2');}
       $('#liTab2Page3_'+(nextTab+1)).trigger('click');
 
 scrolltoDiv("tab3Content_2");
@@ -338,7 +378,7 @@ function addnew_4()
 if(nextTab<5){
 		$("#tab3Content_3").find('.lcurrDivClsPage3_3').addClass('sno');
 $("#tabs_4").find('li').removeClass('eduClsActivePage3Tab3');
-      $('<li id="liTab3Page3_'+(nextTab+1)+'" onclick="selectCurrTab_4(this,event)" role="presentation" class="nav-item eduClsPage3Tab3 eduClsActivePage3Tab3"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage3Tab3__'+nextTab+'"><button class="close closeTab" id="button3_"'+(nextTab+1)+'" type="button" onclick="deleteTab4(this)">×</button><label>Record '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_4');
+      $('<li id="liTab3Page3_'+(nextTab+1)+'" onclick="selectCurrTab_4(this,event)" role="presentation" class="nav-item eduClsPage3Tab3 eduClsActivePage3Tab3"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage3Tab3__'+nextTab+'"><button class="close closeTab" id="button4_'+(nextTab+1)+'" type="button" onclick="deleteTab4(this)">×</button><label>Record '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_4');
       
       $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage3_3 tab-pane active card-body" id="tabPage3Tab3'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><div class="form-group "><label for="period" id="period">Period</label> <input type="text" class="form-control" placeholder="Enter the period" name="period" required=""></div><div class="form-group "><div class="form-group "><label for="training">Training/Certifications</label> <input type="text" class="form-control" placeholder="Enter the training/certifications" name="training" required=""></div><div class="form-group "><label for="institution">Institution</label><input type="text" class="form-control" placeholder="Enter the institution" name="institution" required=""></div><div class="form-group "><label for="percentage">Percentage</label><input type="number" class="form-control" placeholder="Enter the percentage" name="percentage" required=""></div><div class="form-group "><label for="class">Class</label><input type="text" class="form-control" placeholder="Enter the class" name="class" required=""></div></div>').appendTo('#tab3Content_3');}
       $('#liTab3Page3_'+(nextTab+1)).trigger('click');
@@ -359,23 +399,23 @@ scrolltoDiv("tab3Content_3");
 function selectCurrTab_4(pthis,pevent)
 {
 	var ltabId = $(pthis).attr('id');
-	ltabId = ltabId.split('_')[1];
-	if(delRow==ltabId){
-		if(delFlag){
-		$('.eduClsPage3Tab3').removeClass('eduClsActivePage3Tab3');
-		$('.lcurrDivClsPage3_3').addClass('sno');
-		$('#tabPage3Tab31').removeClass('sno');
-		$('#liTab3Page3_1').addClass('eduClsActive');		
-		}
-		delRow="";
-		delFlag=false;
-	}else{
-		$('.eduClsPage3Tab3').removeClass('eduClsActivePage3Tab3');
-		$('.lcurrDivClsPage3_3').addClass('sno');
-		$('#tabPage3Tab3'+ltabId).removeClass('sno');
-		$(pthis).addClass('eduClsActivePage3Tab3');
-	}
-}
+    	ltabId = ltabId.split('_')[1];
+    	if(delRow==ltabId){
+    		if(delFlag){
+    		$('.eduClsPage3Tab3').removeClass('eduClsActivePage3Tab3');
+    		$('.lcurrDivClsPage3_3').addClass('sno');
+    		$('#tabPage3Tab31').removeClass('sno');
+    		$('#liTab3Page3_1').addClass('eduClsActivePage3Tab3');
+    		}
+    		delRow="";
+    		delFlag=false;
+    	}else{
+    		$('.eduClsPage3Tab3').removeClass('eduClsActivePage3Tab3');
+    		$('.lcurrDivClsPage3_3').addClass('sno');
+    		$('#tabPage3Tab3'+ltabId).removeClass('sno');
+    		$(pthis).addClass('eduClsActivePage3Tab3');
+    	}
+    	}
 function addnew_5()
       {
       var nextTab = $('#tabs_5').find('li').length;
@@ -384,7 +424,7 @@ if(nextTab<4){
 $("#tabs_5").find('li').removeClass('eduClsActivePage4Tab2');
       $('<li id="liTab2Page4_'+(nextTab+1)+'" onclick="selectCurrTab_5(this,event)" role="presentation" class="nav-item eduClsPage4Tab2 eduClsActivePage4Tab2"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage4Tab2__'+nextTab+'"><button class="close closeTab" id="button5_'+(nextTab+1)+'" type="button" onclick="deleteTab5(this)">×</button><label>Org '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_5');
       
-      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage4_ tab-pane active card-body" id="tabPage4Tab2'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label id="gapForExp">Gap in Experience</label><select class="form-control" id="gap_'+(nextTab+1)+'"><option value="" disabled="" selected="">Select the Gap in Experience</option><option value="organization 1">Organization1</option><option value="organization 2">Organization2</option><option value="organization 3">Organization3</option><option value="organization4">Organization 4</option></select></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control" id="from"></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number" class="form-control"></div></div><div class="form-group "><label for="Reason">Reason</label><input type="text" class="form-control" placeholder="Enter the Reason" name="Reason" required=""></div></div>').appendTo('#tab3Content_5');}
+      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage4_ tab-pane active card-body" id="tabPage4Tab2'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label id="gapForExp">Gap in Experience</label><select class="form-control borderRed mand1" id="gap_'+(nextTab+1)+' onchange="checkform_1(this)" onkeyup="mandatory_1(this);" ><option value="" disabled="" selected="">Select the Gap in Experience</option><option value="organization 1">Organization1</option><option value="organization 2">Organization2</option><option value="organization 3">Organization3</option><option value="organization4">Organization 4</option></select></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control" id="from"></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number" class="form-control"></div></div><div class="form-group "><label for="Reason">Reason</label><input type="text" class="form-control" placeholder="Enter the Reason" name="Reason" required=""></div></div>').appendTo('#tab3Content_5');}
       $('#liTab2Page4_'+(nextTab+1)).trigger('click');
 
 scrolltoDiv("tab3Content_5");
@@ -429,12 +469,12 @@ function selectCurrTab_5(pthis,pevent)
 		$(pthis).addClass('eduClsActivePage4Tab2');
 	}
 }
-function scrolltoDiv(pid)
-{
-	$('html,body').animate({
-       	 scrollTop: $("#"+pid).offset().top
-    	}, 'slow');
-}
+//function scrolltoDiv(pid)
+//{
+//	$('html,body').animate({
+//       	 scrollTop: $("#"+pid).offset().top
+//    	}, 'slow');
+//}
 function addnew_6()
       {
       var nextTab = $('#tabs_6').find('li').length;
@@ -443,7 +483,7 @@ if(nextTab<2){
 $("#tabs_6").find('li').removeClass('eduClsActivePage6');
       $('<li id="liPage6_'+(nextTab+1)+'" onclick="selectCurrTab_6(this,event)" role="presentation" class="nav-item eduClsPage6 eduClsActivePage6"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage6__'+nextTab+'"><button class="close closeTab" type="button" id="button6_'+(nextTab+1)+'" onclick="deleteTab6(this)">×</button><label>Ref '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_6');
       
-      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage6_ tab-pane active card-body" id="tabPage6'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><div class="form-group "><label for="reference" id="referenceName"><b>Reference Name</b></label> <input type="text" class="form-control" placeholder="Enter Reference Name" name="reference" required=""></div><div class="form-group "><label for="details"><b>Contact Details</b></label><input type="text" class="form-control" placeholder="Enter Contact Details" name="details" required=""></div><div class="form-group "><label for="association"><b>Type of Association</b></label><input type="text" class="form-control" placeholder="Enter Type of Association" name="association" required=""></div></div>').appendTo('#tab6Content');
+      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage6_ tab-pane active card-body" id="tabPage6'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><div class="form-group "><label for="reference" id="referenceName"><b>Reference Name</b></label> <input type="text" class="form-control borderRed mand1"  id="refer1"   placeholder="Enter Reference Name" name="reference" required="" onchange="checkform_1(this)" onkeyup="mandatory_1(this)"></div><div class="form-group "><label for="details"><b>Contact Details</b></label><input type="text" class="form-control borderRed mand1"   id="contact" placeholder="Enter Contact Details" name="details" required=""      onchange="checkform_1(this)"   onkeyup="mandatory_1(this)" ></div><div class="form-group "><label for="association"><b>Type of Association</b></label><input type="text" class="form-control" placeholder="Enter Type of Association" name="association" required=""></div></div>').appendTo('#tab6Content');
 }
       $('#liPage6_'+(nextTab+1)).trigger('click');
 
@@ -515,7 +555,7 @@ function deleteTab(pthis) {
 }
 function deleteTab2(pthis)
 {
-var delRow="";
+ delRow="";
 delFlag = false;
 delRow=pthis.id.slice(-1);
 if($("#liPage3_"+delRow).hasClass("eduClsActivePage3")){
@@ -549,7 +589,7 @@ $("#liTab2Page3_"+delRow).remove();
 $("#tab"+delRow).remove();
 }*/
 
-var delRow="";
+  delRow="";
 delFlag = false;
 delRow=pthis.id.slice(-1);
 if($("#liTab2Page3_"+delRow).hasClass("eduClsActivePage3Tab2")){
@@ -572,6 +612,7 @@ if($("#liTab2Page3_"+delRow).hasClass("eduClsActivePage3Tab2")){
 		$("#liTab2Page3_"+(k)+" label")[0].innerHTML="Gap Record "+k;
 		$("#button3_"+(parseInt(k)+1))[0].id=$("#button_"+(parseInt(k)+1))[0].id.slice(0,-1)+(k);
 	}
+   scrolltoDiv("tab3Content");
 }
 function deleteTab4(pthis)
 {
@@ -583,29 +624,30 @@ $("#liTab3Page3_"+(delRow-1)).trigger('click');
 $("#liTab3Page3_"+delRow).remove();
 $("#tab"+delRow).remove();
 }*/
-var delRow="";
-delFlag = false;
-delRow=pthis.id.slice(-1);
-if($("#liTab3Page3_"+delRow).hasClass("eduClsActivePage3Tab3")){
-		delFlag=true;
-	}
-	/*$.each($("#tabs_4").find('li'), function( index, value ) {
-	  if($("#"+$("#tabs_4").find('li')[index].id).hasClass("eduClsActivePage3Tab3")){
-		delRow=$("#tabs_4").find('li')[index].id.slice(-1);
-		}
-	});*/
-	if($("#tabs_4").find('li').length>1){
-		$("#liTab3Page3_"+delRow).remove();
-		$("#tabPage3Tab3"+delRow).remove();
-		//var k=$("#tabs_4").find('li')[0].id.slice(-1);
-		//$("#liTab3Page3_"+k).trigger('click');
-	}
-	for(var k=delRow;k<=$("#tabs_4").find('li').length;k++){
-		$("#tabs_4").find('li')[k-1].id=$("#tabs_4").find('li')[k-1].id.slice(0,-1)+(k);
-		$("#tabPage3Tab3"+(parseInt(k)+1))[0].id=$("#tabPage3Tab3"+(parseInt(k)+1))[0].id.slice(0,-1)+(k);
-		$("#liTab3Page3_"+(k)+" label")[0].innerHTML="Record"+k;
-		$("#button3_"+(parseInt(k)+1))[0].id=$("#button3_"+(parseInt(k)+1))[0].id.slice(0,-1)+(k);
-	}
+  delRow="";
+  delFlag = false;
+  delRow=pthis.id.slice(-1);
+  if($("#liTab3Page3_"+delRow).hasClass("eduClsActivePage3Tab3")){
+  		delFlag=true;
+  	}
+  	/*$.each($("#tabs_4").find('li'), function( index, value ) {
+  	  if($("#"+$("#tabs_4").find('li')[index].id).hasClass("eduClsActivePage3Tab3")){
+  		delRow=$("#tabs_4").find('li')[index].id.slice(-1);
+  		}
+  	});*/
+  	if($("#tabs_4").find('li').length>1){
+  		$("#liTab3Page3_"+delRow).remove();
+  		$("#tabPage3Tab3"+delRow).remove();
+  		//var k=$("#tabs_4").find('li')[0].id.slice(-1);
+  		//$("#liTab3Page3_"+k).trigger('click');
+  	}
+  	for(var k=delRow;k<=$("#tabs_4").find('li').length;k++){
+  		$("#tabs_4").find('li')[k-1].id=$("#tabs_4").find('li')[k-1].id.slice(0,-1)+(k);
+  		$("#tabPage3Tab3"+(parseInt(k)+1))[0].id=$("#tabPage3Tab3"+(parseInt(k)+1))[0].id.slice(0,-1)+(k);
+  		$("#liTab3Page3_"+(k)+" label")[0].innerHTML="Record"+k;
+  		$("#button4_"+(parseInt(k)+1))[0].id=$("#button4_"+(parseInt(k)+1))[0].id.slice(0,-1)+(k);
+  	}
+  	 scrolltoDiv("tab3Content");
 	
 }
 function deleteTab5(pthis)
@@ -641,6 +683,7 @@ delRow="";
 		$("#liTab2Page4_"+(k)+" label")[0].innerHTML="Org "+k;
 		$("#button5_"+(parseInt(k)+1))[0].id=$("#button5_"+(parseInt(k)+1))[0].id.slice(0,-1)+(k);
 	}
+	scrolltoDiv("tab3Content");
 	
 }
 function deleteTab6(pthis)
@@ -676,6 +719,7 @@ delRow="";
 		$("#liPage6_"+(k)+" label")[0].innerHTML="Record"+k;
 		$("#button6_"+(parseInt(k)+1))[0].id=$("#button6_"+(parseInt(k)+1))[0].id.slice(0,-1)+(k);
 	}
+	scrolltoDiv("tab3Content");
 }
 
 function educationGap(pthis){
@@ -700,4 +744,58 @@ function workExperience(pthis){
 		$("#releventWork").addClass("sno");
 	}
 }
+function Hide(pthis){
+	if ($(pthis)[0].innerText=="YES") {
+	$("#travel").addClass("sno");
+	}
+	else{
+	$("#travel").removeClass("sno");
+}
+}
 
+function mandatory_1(pthis)
+{
+	if($("#"+pthis.id).val()!=="" ){
+		if($("#"+pthis.id).val()==="Select")
+		{
+			$("#"+pthis.id).removeClass('borderGreen');
+			$("#"+pthis.id).addClass('borderRed');
+		}else{
+			$("#"+pthis.id).addClass('borderGreen');
+		}
+	}else {
+			$("#"+pthis.id).removeClass('borderGreen');
+			$("#"+pthis.id).addClass('borderRed');
+		}
+}
+
+function checkform_1(pthis)
+    {
+	if($("#"+pthis.id).val()!==""){
+	$("#"+pthis.id).removeClass('mand1');
+	}else{
+	$("#"+pthis.id).addClass('mand1');
+	}
+
+	if($(".mand1").length==0){
+		$("#next_1").removeAttr('disabled');
+		$('#next_1').addClass('submitEnable');
+		$("#tabdata1").css("background","green");
+		$("#tabdata1").css("color","white");
+	}else{
+		$("#next_1").attr('disabled','disabled');
+		$("#next_1").removeClass('submitEnable');
+		$("#tabdata1").css("background","red");
+	}
+}
+function finalSubmit(){
+if($("#camerabtnId").hasClass("profilepic")||$("#thing").hasClass("profilepic") ){
+console.log("file selected");
+}
+else{
+event.preventDefault();
+ $('<div id="container"><p> please select image</p></div>').dialog({
+ title: "Error"
+ });
+ }
+}

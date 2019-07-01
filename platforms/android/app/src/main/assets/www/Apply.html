@@ -18,6 +18,9 @@ $("#educationGap").addClass("sno");
 $("#eduReason").addClass("sno");
 $("#workExperience").addClass("sno");
 $("#releventWork").addClass("sno");
+addnew_4();
+addnew_5();
+addnew_6();
 });
 $(document).ready(function(){
 jQuery(function($) {
@@ -68,7 +71,7 @@ jQuery(function($) {
 		<h2>Application Form</h2>
 	</div>
 	<ul class="nav nav-tabs numberTab" id="myTab">                   
-                  <li class="active">
+                  <li class="active" id="secA">
                      <a href="#sectionA" data-toggle="tab">
                       <span class="round-tabs one" id="tabdata1">1                       
                       </span> 
@@ -110,12 +113,12 @@ jQuery(function($) {
 						<div class="form-group col-sm-6">
 							<label>Gender :</label>
 						         <select class="form-control mand borderRed" onchange="checkform(this);mandatory(this);" id="gender">
-								<option>Select</option> 
+								<option disabled="" selected="">Select</option> 
 								<option>Male</option>
 								<option>Female</option>
 								<option>Other</option>
 			       				 </select>
-</div>
+						</div>
 					</div>
 					<div class="row">
 						<!--<div class="form-group col-sm-6">
@@ -132,7 +135,7 @@ jQuery(function($) {
 							  <div class="form-group">
 							    <label>Date Of Birth</label>
 							    <div class="input-group">
-							      <input type="text" class="form-control  mand borderRed" name="sample-date" id="dob" onchange="checkform(this);mandatory(this);">
+							      <input  class="form-control  mand borderRed" name="sample-date" id="dob" readonly onchange="checkform(this);mandatory(this);">
 							      <span class="input-group-btn">
 							     <button type="button" class="btn btn-default" data-toggle="datepicker" onclick="datepick()" data-target-name="sample-date"><span class="glyphicon glyphicon-calendar"></span>
 							      </button>
@@ -151,9 +154,7 @@ jQuery(function($) {
 							<textarea class="form-control mand borderRed" rows="3" cols="50" id="permenantAddr"  onchange="checkform(this)"  onkeyup="mandatory(this)"></textarea>
 						</div>	
 						<div class="form-group col-sm-6">
-							<label>Is your present and permanent addresses are same?</label>	
-							<!--<input type="radio" onclick="fillAddress(this)" value="Yes">Yes
-							<input type="radio" onclick="fillAddress(this)" value="No">No-->
+							<label>Is your present and permanent addresses are same?</label>
 							<div class="radio" onclick="fillAddress(this)">
 							  <label><input type="radio" name="optradio" >YES</label>
 							</div>
@@ -207,9 +208,9 @@ jQuery(function($) {
 						<div class="form-group">
 							    <label>Validity Of Passport No : </label>
 							<div class="input-group">
-							      <input type="text" class="form-control" id="validity" name="validity">
+							      <input  class="form-control" id="validity" readonly name="validity">
 							      <span class="input-group-btn">
-							     <button type="button" class="btn btn-default" onclick ="datepick()" data-toggle="datepicker1" data-target-name="validity">
+							     <button type="button" class="btn btn-default" onclick ="datepick_1()" data-toggle="datepicker1" data-target-name="validity">
 									<span class="glyphicon glyphicon-calendar"></span>
 							      </button>							      
 			    				</div>
@@ -233,12 +234,12 @@ jQuery(function($) {
 					<div class="row">
 						<div class="col-sm-12" id="details" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew" onclick="addnew()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew" onclick="addnew()">Add New</button></br>
+								<!--<label id="minusofaddnew"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab(this)" aria-hidden="true"></span></label></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs mynews academic" id="tabs"></br>
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs"></br>
 									</ul>
 								</div>
 								<div class="tab-content" id="__BVID__176__BV_tab_container_">
@@ -275,12 +276,12 @@ jQuery(function($) {
 						<div class="row" id="educationGap">				
 							<div class="col-sm-12" id="details_1" style="background-color:white;">
 								<div>
-									<label id="plusofaddnew3" onclick="addnew_3()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew3"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab3(this)" aria-hidden="true"></span></label></br>
+									<button class="btn btn-info" type="button" id="plusofaddnew3" onclick="addnew_3()">Add New </button></br></br>
+								<!--<label id="minusofaddnew3"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab3(this)" aria-hidden="true"></span></label></br></br>-->
 								</div>
 								<div class="tabs" id="__BVID__176">
 									<div class="card-header">
-										<ul role="tablist" class="nav nav-tabs card-header-tabs eduGap" id="tabs_3">
+										<ul role="tablist" class="nav nav-tabs card-header-tabs eduGap recordtab" id="tabs_3">
 										</ul>
 									</div>
 									<div class="tab-content" id="tab3Content_2">
@@ -288,16 +289,16 @@ jQuery(function($) {
 								</div>
 							</div>
 						</div>
-						<label>Additional training & Certifications</label>
+						<label id="certification">Additional training & Certifications</label>
 					<div class="row">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew4" onclick="addnew_4()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-							<label id="minusofaddnew4"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab4(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew4" onclick="addnew_4()">Add New</button></br></br>
+							<!--<label id="minusofaddnew4"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab4(this)" aria-hidden="true"></span></label></br></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_4">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_4">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab3Content_3">
@@ -342,12 +343,12 @@ jQuery(function($) {
 					<div class="row" id="workExperience">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew2" onclick="addnew_2()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew2"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab2(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew2" onclick="addnew_2()">Add New</button></br></br>
+								<!--<label id="minusofaddnew2"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab2(this)" aria-hidden="true"></span></label>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_2">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_2">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab3Content">
@@ -355,16 +356,16 @@ jQuery(function($) {
 							</div>
 						</div>					  
 					</div>
-					<LABEL>If you have any Gap in experience if Yes, please mention the reason below</LABEL>
+					<LABEL id="gapInExp">If you have any Gap in experience if Yes, please mention the reason below</LABEL>
 					<div class="row">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew5" onclick="addnew_5()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew5"><span class="glyphicon glyphicon-minus" id="tab2del" onclick="deleteTab5(this)" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew5" onclick="addnew_5()">Add New</button></br></br>
+								<!--<label id="minusofaddnew5"><span class="glyphicon glyphicon-minus-sign" id="tab2del" onclick="deleteTab5(this)" aria-hidden="true"></span></label></br></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_5">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_5">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab3Content_5">
@@ -400,18 +401,19 @@ jQuery(function($) {
 						<label for='longTermGoal'>Long Term Goals</label>
 				    		<textarea class="form-control" rows = "3" cols = "50"></textarea>   
 				     </div>
-				    <div class="form-group">		    
-						<lable>Are you willing to travel abroad?</lable>    
-				    		<div class="radio">
-							<label><input type="radio" name="travel" >YES</label>
+				    <div class="form-group">
+						<label>Are you willing to travel abroad?</label>
+						<div class="radio" onclick="Hide(this)">
+							<label><input type="radio" name="notWilling" >YES</label>
 						</div>
-						<div class="radio">
-						  	<label><input type="radio" name="travel">NO</label>
-						</div>		    
-				     </div>
-				    <div class="form-group">		    
-						<p>if no why?</p>
-				    		<input class="form-control" type="text" placeholder="Explain reason"> 		    
+						<div class="radio" onclick="Hide(this)">
+							<label><input type="radio" name="notWilling" >NO</label>
+						</div>
+					</div>
+					<div class="form-group" id="travel">
+
+					<p>if no why?</p>
+				    		<input class="form-control" type="text" placeholder="Explain reason">
 				     </div>
 				   <div class="form-group">
 				    <p>Compensation details:(please mention your total cost to company(CTC)</p>
@@ -426,16 +428,16 @@ jQuery(function($) {
 					</div>
 				</div>
 				<div id="sectionF" class="tab-pane fade">
-					<label>Two Professional References(One must be from the Present Employer)</label>
+					<label id="reference">Two Professional References(One must be from the Present Employer)</label>
 					<div class="row">
 						<div class="col-sm-12" id="details_1" style="background-color:white;">
 							<div>
-								<label id="plusofaddnew6" onclick="addnew_6()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></label>
-								<label id="minusofaddnew6" onclick="deleteTab6(this)"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></label></br>
+								<button class="btn btn-info" type="button" id="plusofaddnew6" onclick="addnew_6()">Add New</button></br></br>
+								<!--<label id="minusofaddnew6" onclick="deleteTab6(this)"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></label></br></br>-->
 							</div>
 							<div class="tabs" id="__BVID__176">
 								<div class="card-header">
-									<ul role="tablist" class="nav nav-tabs card-header-tabs" id="tabs_6">
+									<ul role="tablist" class="nav nav-tabs card-header-tabs recordtab" id="tabs_6">
 									</ul>
 								</div>
 								<div class="tab-content" id="tab6Content">
@@ -446,13 +448,13 @@ jQuery(function($) {
 					<center>
 						<div class="app">
 							<h3>Upload Profile Picture</h3>
-							<div class="frame-square">
+							<div class="frame-square"    id="camerabtnId" onclick="testCamera()"   >
 								<img class="profile-pic" id="img" width="100%" height="100%" src="img/Profile.jpeg"/>			
 							</div>
 						</div>
 					</center>				
 					   <div align="center">
-						   <button class="btn btn-primary" id="camerabtnId" onclick="testCamera()"><span class="glyphicon glyphicon-camera" aria-hidden="true"></button>						
+						   <!--<button class="btn btn-primary" id="camerabtnId" onclick="testCamera()"><span class="glyphicon glyphicon-camera" aria-hidden="true"></button>						-->
 						   <input class="file-upload" type="file" accept="image/*"/>							
 	    					   <label for="upload-1" class="btn "><span class="glyphicon glyphicon-upload" aria-hidden="true" id="thing"></span></label>
 						  <input type="file" class="file-upload" id="upload-1">
@@ -477,9 +479,9 @@ jQuery(function($) {
 							<div class="form-group">
 							    <label>Date</label>
 							    <div class="input-group">
-							      <input type="text" class="form-control" name="dateOfSubmission" id="lastdate">
+							      <input  class="form-control" name="dateOfSubmission" readonly id="lastdate">
 							      <span class="input-group-btn">
-							     <button type="button" class="btn btn-default" data-toggle="datepicker2" onclick="datepick()" data-target-name="dateOfSubmission"><span class="glyphicon glyphicon-calendar"></span>
+							     <button type="button" class="btn btn-default" data-toggle="datepicker2" onclick="datepick_2()" data-target-name="dateOfSubmission"><span class="glyphicon glyphicon-calendar"></span>
 							      </button>
 							      </span>
 							    </div>

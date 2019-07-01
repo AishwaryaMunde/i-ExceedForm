@@ -1,7 +1,4 @@
 body{
-    background: #1f6ad0;
-    background: -moz-linear-gradient(left, #1f6ad0 0%, #13b9de 100%);
-    background: -webkit-linear-gradient(left, #1f6ad0 0%, #13b9de 100%);
     background: linear-gradient(to right, #1f6ad0 0%, #13b9de 100%);
 }
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
@@ -15,18 +12,23 @@ body{
     cursor: default;
     border: 0;
     border-bottom-color: transparent;
+    background-color: transparent;    
 }
 #prevstep,#prevStepSectionC,#prevStepSectionF,#prevStepSectionE,#prevStepSectionD,#plusofaddnew3,#plusofaddnew4,
 #plusofaddnew5,#plusofaddnew6,#plusofaddnew2,#plusofaddnew {
    float: left;
 }
+#eduReason,#certification,#releventWork,#gapInExp,#reference {
+    margin-bottom: 14px;
+}
+
 #minusofaddnew , #minusofaddnew3,#minusofaddnew4,#minusofaddnew2,#minusofaddnew5,#minusofaddnew6{
   float: right;
 }
 span.round-tabs{
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     display: inline-block;
     border-radius: 100px;
     background: white;
@@ -39,8 +41,7 @@ span.round-tabs{
 span.round-tabs.one{
     border: 2px white;
 }
-
-li.active span.round-tabs.one{    
+li.active span.round-tabs.one{
     color: white;
 }
 span.round-tabs.two{
@@ -87,28 +88,7 @@ li.active span.round-tabs.six{
 .numberTab > li {
     width: 16%;
 }
-li:after {
-    content: " ";
-    position: absolute;
-    left: 28%;
-    opacity:0;
-    margin: 0 auto;
-    bottom: 0px;
-    border: 5px solid transparent;
-    border-bottom-color: #ddd;
-    transition:0.1s ease-in-out;
-    
-}
-li.active:after {
-    content: " ";
-    position: absolute;
-    left: 45%;
-    opacity:1;
-    margin: 0 auto;
-    bottom: 0px;
-    border: 10px solid transparent;
-    border-bottom-color: #ddd;    
-}
+
 .numberTab > li a{
    width: 50px;
    height: 50px;
@@ -118,6 +98,7 @@ li.active:after {
 }
 .numberTab > li a:hover{
     background: transparent;
+    border-color: transparent;
 }
 .button, .button4 {
   border-radius: 10px;
@@ -138,9 +119,9 @@ li.active:after {
 @media( max-width : 585px ){
 span.round-tabs {
 	font-size:16px;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
+	width: 40px;
+	height: 40px;
+	line-height: 42px;
 }
 }
 @import "compass/css3";
@@ -231,7 +212,7 @@ h2 {
 margin-right: 0;
 }
 #secA {
-margin-left:7px;
+    margin-left: 10px;
 }
 .navbar{
 margin-bottom:0px;
@@ -249,18 +230,6 @@ margin-bottom:0px;
 #toggleHome,#toggleContact {
 margin-right: 0;
 }
-.bg {
-  /* The image used */
-  background-image: url("/img/First.jpg");
-
-  /* Full height */
-  height: 50%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 h3 {
    margin-top:0px;
@@ -272,21 +241,18 @@ h3 {
 .borderGreen {
     border: 2px solid green;
 }
-#degree,#gap,#gapForExp {
-margin-top:17px;
+#degree,#gap,#gapForExp,#period,#org,#referenceName {
+   margin-top:17px;
 }
 .sno {
-	display: none !important;
+   display: none !important;
 }
-.eduClsActive , .eduClsActivePage3,.eduClsActivePage3Tab2, .eduClsActivePage4Tab2, .eduClsActivePage3Tab3 {
-	background-color: lightgrey !important;
-}
+
 .navbar-brand {
   padding: 0px;
 }
 
-.glyphicon-plus:before , .glyphicon-minus{
-    background-color: lightgrey;
+.glyphicon-plus-sign:before , .glyphicon-minus-sign ,.close{
     font-size: 17px;
     line-height: 1.428571429;
     border-radius: 11px;
@@ -307,7 +273,6 @@ margin-top:17px;
   text-decoration: none;
 }
 
-
 input[type="file"] {
   display: none !important;
 }
@@ -316,21 +281,43 @@ background-color: #337ab7;
 }
 #submit{
   background-color: #337ab7;
-  font-size:17px;
+  font-size:15px;
   color: white;
 }
 .eduClsActive a,.eduClsActivePage3 a ,.eduClsActivePage3Tab2 a,.eduClsActivePage3Tab3 a ,.eduClsActivePage4Tab2 a , .eduClsActivePage6 a
 {
-background-color: #29b141 !important;
-color: black;
+   background-color: #3f88b8!important;
+   color: white;
 }
-.nav-Tabs >li>a {
-    background-color: #e2d9d9;
-	color: black;
-    }
 
-#tabs,#tabs_3,#tabs_4,#tabs_2,#tabs_5,#tabs_6{
+
+#tabs,#tabs_3,#tabs_4,#tabs_2,#tabs_5,#tabs_6{   
    margin-bottom: 12px;
+   margin-top: 7px;
+}
+.recordtab > li > a {
+background: gainsboro;
+}
+.recordtab > li .close {
+   margin: -11px -12px 2px 8px;
+   font-size: 18px;
+}
+.recordtab {
+    margin-bottom :1px !important;
 }
 
+.tabwidth > li{
+ width:20%;
+float:left;
+}
+.tabwidth > li a {
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
+}
+.tabwidth > li a .close {font-size:15px}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+ background-color: #ffffff;
+ opacity: 1;
+}
 

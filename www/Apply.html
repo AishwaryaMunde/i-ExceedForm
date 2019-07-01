@@ -55,8 +55,7 @@ jQuery(function($) {
       </div>
       <div id="navbar1" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li id="toggleHome"><a href="index.html">Home</a></li>
-	  <li id="toggleApply"><a href="Apply.html">Application Form</a></li>         	
+	  <li id="toggleApply"><a href="Apply.html">Application Form</a></li>
           <li id="toggleContact"><a href="Contact.html">Contact</a></li>         
 	  <li id="toggleAbout"><a href="About.html">About</a></li>         
         </ul>
@@ -113,7 +112,7 @@ jQuery(function($) {
 						<div class="form-group col-sm-6">
 							<label>Gender :</label>
 						         <select class="form-control mand borderRed" onchange="checkform(this);mandatory(this);" id="gender">
-								<option>Select</option> 
+								<option disabled="" selected="">Select</option> 
 								<option>Male</option>
 								<option>Female</option>
 								<option>Other</option>
@@ -135,7 +134,7 @@ jQuery(function($) {
 							  <div class="form-group">
 							    <label>Date Of Birth</label>
 							    <div class="input-group">
-							      <input type="text" class="form-control  mand borderRed" name="sample-date" id="dob" onchange="checkform(this);mandatory(this);">
+							      <input  class="form-control  mand borderRed" name="sample-date" id="dob" readonly onchange="checkform(this);mandatory(this);">
 							      <span class="input-group-btn">
 							     <button type="button" class="btn btn-default" data-toggle="datepicker" onclick="datepick()" data-target-name="sample-date"><span class="glyphicon glyphicon-calendar"></span>
 							      </button>
@@ -208,9 +207,9 @@ jQuery(function($) {
 						<div class="form-group">
 							    <label>Validity Of Passport No : </label>
 							<div class="input-group">
-							      <input type="text" class="form-control" id="validity" name="validity">
+							      <input  class="form-control" id="validity" readonly name="validity">
 							      <span class="input-group-btn">
-							     <button type="button" class="btn btn-default" onclick ="datepick()" data-toggle="datepicker1" data-target-name="validity">
+							     <button type="button" class="btn btn-default" onclick ="datepick_1()" data-toggle="datepicker1" data-target-name="validity">
 									<span class="glyphicon glyphicon-calendar"></span>
 							      </button>							      
 			    				</div>
@@ -401,18 +400,19 @@ jQuery(function($) {
 						<label for='longTermGoal'>Long Term Goals</label>
 				    		<textarea class="form-control" rows = "3" cols = "50"></textarea>   
 				     </div>
-				    <div class="form-group">		    
-						<lable>Are you willing to travel abroad?</lable>    
-				    		<div class="radio">
-							<label><input type="radio" name="travel" >YES</label>
+				    <div class="form-group">
+						<label>Are you willing to travel abroad?</label>
+						<div class="radio" onclick="Hide(this)">
+							<label><input type="radio" name="notWilling" >YES</label>
 						</div>
-						<div class="radio">
-						  	<label><input type="radio" name="travel">NO</label>
-						</div>		    
-				     </div>
-				    <div class="form-group">		    
-						<p>if no why?</p>
-				    		<input class="form-control" type="text" placeholder="Explain reason"> 		    
+						<div class="radio" onclick="Hide(this)">
+							<label><input type="radio" name="notWilling" >NO</label>
+						</div>
+					</div>
+					<div class="form-group" id="travel">
+
+					<p>if no why?</p>
+				    		<input class="form-control" type="text" placeholder="Explain reason">
 				     </div>
 				   <div class="form-group">
 				    <p>Compensation details:(please mention your total cost to company(CTC)</p>
@@ -447,13 +447,13 @@ jQuery(function($) {
 					<center>
 						<div class="app">
 							<h3>Upload Profile Picture</h3>
-							<div class="frame-square">
+							<div class="frame-square"    >
 								<img class="profile-pic" id="img" width="100%" height="100%" src="img/Profile.jpeg"/>			
 							</div>
 						</div>
 					</center>				
 					   <div align="center">
-						   <button class="btn btn-primary" id="camerabtnId" onclick="testCamera()"><span class="glyphicon glyphicon-camera" aria-hidden="true"></button>						
+						   <button class="btn btn-primary" id="camerabtnId" onclick="testCamera()"><span class="glyphicon glyphicon-camera" aria-hidden="true"></button>
 						   <input class="file-upload" type="file" accept="image/*"/>							
 	    					   <label for="upload-1" class="btn "><span class="glyphicon glyphicon-upload" aria-hidden="true" id="thing"></span></label>
 						  <input type="file" class="file-upload" id="upload-1">
@@ -478,9 +478,9 @@ jQuery(function($) {
 							<div class="form-group">
 							    <label>Date</label>
 							    <div class="input-group">
-							      <input type="text" class="form-control" name="dateOfSubmission" id="lastdate">
+							      <input  class="form-control" name="dateOfSubmission" readonly id="lastdate">
 							      <span class="input-group-btn">
-							     <button type="button" class="btn btn-default" data-toggle="datepicker2" onclick="datepick()" data-target-name="dateOfSubmission"><span class="glyphicon glyphicon-calendar"></span>
+							     <button type="button" class="btn btn-default" data-toggle="datepicker2" onclick="datepick_2()" data-target-name="dateOfSubmission"><span class="glyphicon glyphicon-calendar"></span>
 							      </button>
 							      </span>
 							    </div>
@@ -491,7 +491,7 @@ jQuery(function($) {
 						 app.initialize();
 					</script>
 					<div class="text-center">						
-						<button class="button button4" id="submit">Submit</button>
+						<button class="button button4" id="submit" onclick="finalSubmit()">Submit</button>
 						<button class="button button4" id="prevStepSectionF" onclick="navigateToB(this)"><span id="secFPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
 					</div>
 				</div>
