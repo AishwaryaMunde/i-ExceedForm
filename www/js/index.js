@@ -166,7 +166,7 @@ var nextTab = $('#tabs').find('li').length;
 if(nextTab<5){
 $('<li id="liTab_'+(nextTab+1)+'" onclick="selectCurrTab(this,event)" role="presentation" class="nav-item eduCls"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav-link " id="tab_'+nextTab+'"><button class="close closeTab" id="button_'+(nextTab+1)+'" type="button" onclick="deleteTab(this)">x</button><label>Record '+(nextTab+1)+'</label></a></li>').appendTo('#tabs');
 
-$('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivCls tab-pane active card-body" id="tab'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="degree" id="degree">Degree/Course</label><select class="form-control borderRed mand1"  id="degree_'+(nextTab+1)+'" onchange="updateTab(this); checkform_1(this); mandatory_1(this);"><option  value=""    selected="">Select the degree</option><option value="sslc">SSLC/10TH</option><option value="hsc">HSC/12TH</option><option value="bsc">BSC</option><option value="b.e">B.E</option><option value="m.e">M.E</option></select></div><div class="form-group "><label for="period">Period</label><input type="text" class="form-control borderRed mand1"  id="period"  placeholder="Enter period" onchange="checkform_1(this)"   onkeyup="mandatory_1(this)";  "></div><div class=" form-group" ><label for="institution">Institution</label><input type="text" class="form-control borderRed mand1" placeholder="Enter institution"  id="instution" onchange="checkform_1(this)"   onkeyup="mandatory_1(this)"; > </div><div class="form-group "><label for="class">Class</label><input id="class" type="text" class="form-control borderRed mand1"  placeholder="Enter the class"  onchange="checkform_1(this)"   onkeyup="mandatory_1(this)";></div><div class="form-group "><label for="percentage">Percentage</label><input type="number" class="form-control borderRed mand1" placeholder="Enter the percentage"   id="percent" onchange="checkform_1(this)"  onkeyup="mandatory_1(this)";></div><div class="text-center"><button type="submit" class="button button4" id="nextStep"  onclick="navigateToB(this)"><span id="secBNext" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button><button type="submit" class="button button4" id="prevstep" onclick="navigateToB(this)"><span id="secBPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button></div></div>').appendTo('.tab-content');
+$('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivCls tab-pane active card-body" id="tab'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label for="degree" id="degree">Degree/Course</label><select class="form-control borderRed mand1"  id="degree_'+(nextTab+1)+'" onchange="updateTab(this); checkform_1(this); mandatory_1(this);"><option selected="" value="selectTheDegree">Select the degree</option><option value="sslc">SSLC/10TH</option><option value="hsc">HSC/12TH</option><option value="bsc">BSC</option><option value="b.e">B.E</option><option value="m.e">M.E</option></select></div><div class="form-group "><label for="period">Period</label><input type="text" class="form-control borderRed mand1"  id="period"  placeholder="Enter period" onchange="checkform_1(this)"   onkeyup="mandatory_1(this)";  "></div><div class=" form-group" ><label for="institution">Institution</label><input type="text" class="form-control borderRed mand1" placeholder="Enter institution"  id="instution" onchange="checkform_1(this)"   onkeyup="mandatory_1(this)"; > </div><div class="form-group "><label for="class">Class</label><input id="class" type="text" class="form-control borderRed mand1"  placeholder="Enter the class"  onchange="checkform_1(this)"   onkeyup="mandatory_1(this)";></div><div class="form-group "><label for="percentage">Percentage</label><input type="number" class="form-control borderRed mand1" placeholder="Enter the percentage"   id="percent" onchange="checkform_1(this)"  onkeyup="mandatory_1(this)";></div><div class="text-center"><button type="submit" class="button button4" id="nextStep"  onclick="navigateToB(this)"><span id="secBNext" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button><button type="submit" class="button button4" id="prevstep" onclick="navigateToB(this)"><span id="secBPrev"class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button></div></div>').appendTo('.tab-content');
 }
 if(nextTab==0){
  $("#degree_1").val("sslc").trigger('change'); 
@@ -424,7 +424,7 @@ if(nextTab<4){
 $("#tabs_5").find('li').removeClass('eduClsActivePage4Tab2');
       $('<li id="liTab2Page4_'+(nextTab+1)+'" onclick="selectCurrTab_5(this,event)" role="presentation" class="nav-item eduClsPage4Tab2 eduClsActivePage4Tab2"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage4Tab2__'+nextTab+'"><button class="close closeTab" id="button5_'+(nextTab+1)+'" type="button" onclick="deleteTab5(this)">×</button><label>Org '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_5');
       
-      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage4_ tab-pane active card-body" id="tabPage4Tab2'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label id="gapForExp">Gap in Experience</label><select class="form-control borderRed mand1" id="gap_'+(nextTab+1)+' onchange="checkform_1(this)" onkeyup="mandatory_1(this);" ><option value="" disabled="" selected="">Select the Gap in Experience</option><option value="organization 1">Organization1</option><option value="organization 2">Organization2</option><option value="organization 3">Organization3</option><option value="organization4">Organization 4</option></select></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control" id="from"></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number" class="form-control"></div></div><div class="form-group "><label for="Reason">Reason</label><input type="text" class="form-control" placeholder="Enter the Reason" name="Reason" required=""></div></div>').appendTo('#tab3Content_5');}
+      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage4_ tab-pane active card-body" id="tabPage4Tab2'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><label id="gapForExp">Gap in Experience</label><select class="form-control borderRed mand1" id="gap_'+(nextTab+1)+'" onchange="checkform_1(this); mandatory_1(this);" ><option value="" disabled="" selected="">Select</option><option value="organization 1">Organization1</option><option value="organization 2">Organization2</option><option value="organization 3">Organization3</option><option value="organization4">Organization 4</option></select></div><label id="duration">Duration : </label><div class="row"><div class="form-group col-sm-6"><label for="from">From :</label><input type="number" class="form-control" id="from"></div><div class="form-group  col-sm-6"><label for="to">To :</label><input type="number" class="form-control"></div></div><div class="form-group "><label for="Reason">Reason</label><input type="text" class="form-control" placeholder="Enter the Reason" name="Reason" required=""></div></div>').appendTo('#tab3Content_5');}
       $('#liTab2Page4_'+(nextTab+1)).trigger('click');
 
 scrolltoDiv("tab3Content_5");
@@ -483,7 +483,7 @@ if(nextTab<2){
 $("#tabs_6").find('li').removeClass('eduClsActivePage6');
       $('<li id="liPage6_'+(nextTab+1)+'" onclick="selectCurrTab_6(this,event)" role="presentation" class="nav-item eduClsPage6 eduClsActivePage6"><a role="tab" aria-selected="true" aria-setsize="2" aria-posinset="1" target="_self" href="#" class="nav nav-tabs " id="tabPage6__'+nextTab+'"><button class="close closeTab" type="button" id="button6_'+(nextTab+1)+'" onclick="deleteTab6(this)">×</button><label>Ref '+(nextTab+1)+'</label></a></li>').appendTo('#tabs_6');
       
-      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage6_ tab-pane active card-body" id="tabPage6'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><div class="form-group "><label for="reference" id="referenceName"><b>Reference Name</b></label> <input type="text" class="form-control borderRed mand1"  id="refer1"   placeholder="Enter Reference Name" name="reference" required="" onchange="checkform_1(this)" onkeyup="mandatory_1(this)"></div><div class="form-group "><label for="details"><b>Contact Details</b></label><input type="text" class="form-control borderRed mand1"   id="contact" placeholder="Enter Contact Details" name="details" required=""      onchange="checkform_1(this)"   onkeyup="mandatory_1(this)" ></div><div class="form-group "><label for="association"><b>Type of Association</b></label><input type="text" class="form-control" placeholder="Enter Type of Association" name="association" required=""></div></div>').appendTo('#tab6Content');
+      $('<div role="tabpanel" tabindex="-1" aria-hidden="false" class="lcurrDivClsPage6_ tab-pane active card-body" id="tabPage6'+(nextTab+1)+'" aria-labelledby="__BVID__177___BV_tab_button__"><div class="form-group "><div class="form-group "><label for="reference" id="referenceName"><b>Reference Name</b></label> <input type="text" class="form-control borderRed mand1"  id="refer1"   placeholder="Enter Reference Name" name="reference" onchange="checkform_1(this)" onkeyup="mandatory_1(this)" required></div><div class="form-group "><label for="details"><b>Contact Details</b></label><input type="text" class="form-control borderRed mand1"   id="contact" placeholder="Enter Contact Details" name="details" onchange="checkform_1(this)" onkeyup="mandatory_1(this)" required></div><div class="form-group "><label for="association"><b>Type of Association</b></label><input type="text" class="form-control" placeholder="Enter Type of Association" name="association" required=""></div></div>').appendTo('#tab6Content');
 }
       $('#liPage6_'+(nextTab+1)).trigger('click');
 
@@ -761,7 +761,8 @@ function mandatory_1(pthis)
 			$("#"+pthis.id).removeClass('borderGreen');
 			$("#"+pthis.id).addClass('borderRed');
 		}else{
-			$("#"+pthis.id).addClass('borderGreen');
+			$("#"+pthis.id).removeClass('borderRed');
+			$("#"+pthis.id).addClass('borderGreen');			
 		}
 	}else {
 			$("#"+pthis.id).removeClass('borderGreen');
@@ -778,14 +779,14 @@ function checkform_1(pthis)
 	}
 
 	if($(".mand1").length==0){
-		$("#next_1").removeAttr('disabled');
-		$('#next_1').addClass('submitEnable');
-		$("#tabdata1").css("background","green");
-		$("#tabdata1").css("color","white");
+		$("#nextStep").removeAttr('disabled');
+		$('#nextStep').addClass('submitEnable');
+		$("#tabdata2").css("background","green");
+		$("#tabdata2").css("color","white");
 	}else{
-		$("#next_1").attr('disabled','disabled');
-		$("#next_1").removeClass('submitEnable');
-		$("#tabdata1").css("background","red");
+		$("#nextStep").attr('disabled','disabled');
+		$("#nextStep").removeClass('submitEnable');
+		$("#tabdata2").css("background","red");
 	}
 }
 function finalSubmit(){
